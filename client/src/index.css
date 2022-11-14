@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  font-size: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 200px 60px 0px 60px;
+}
+
+.css-11b3ww9-MuiPaper-root-MuiAppBar-roo {
+  background-color: white;
+  color: black;
+}
+
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  /* color: white */
+}
+
+/* ::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(25, 118, 210);
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+} */
