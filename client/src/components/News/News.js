@@ -12,7 +12,7 @@ import {
 
 import { SaveButton, ShareButton } from "../Button/ActionButton";
 import axios from "axios";
-
+import { useSnackbar } from 'notistack';
 import { UserContext } from "../../App";
 
 const News = ({ $ }) => {
@@ -30,16 +30,16 @@ const News = ({ $ }) => {
       axios
         .delete(`/news/deleteNews`, $)
         .then((res) => {
-          console.log(res.data);
           setSaved(false);
+          enqueueSnackbar('Removed')
         })
         .catch((err) => console.log(err));
     } else {  
       axios
         .post(`/news/saveNews`, $)
         .then((res) => {
-          console.log(res.data);
           setSaved(true);
+          enqueueSnackbar('Saved')
         })
         .catch((err) => console.log(err));
     }

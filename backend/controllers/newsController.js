@@ -92,10 +92,9 @@ const getQueryNews = async (req, res) => {
   const { query, page } = req.params;
 
   const params = {
-
     pageSize: PAGE_SIZE,
     page: page,
-    q:query,
+    q: query,
     apiKey: process.env.NEWS_API_KEY,
   };
   const { data } = await axios.get("https://newsapi.org/v2/top-headlines", {
@@ -120,8 +119,9 @@ const saveNews = (req, res) => {
 const deleteNews = (req, res) => {
   const { url } = req.body;
   //delete where utl = url and subscribedBy = req.user.id
-  News.deleteOne({ url:
-    url, subscribedBy: parseInt(req.user.id) });
+  News.deleteOne({ url: url, subscribedBy: req.user.id }, function (err) {
+    if (err) console.log(err);
+  });
   res.status(200).json({ message: "Deleted" });
 };
 
